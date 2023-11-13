@@ -11,7 +11,7 @@ if (!projectName) {
 
 execSync('pnpm i', { cwd: projectRoot, stdio: 'inherit' });
 
-const KEY = 'npm-template';
+const KEY = 'template-name';
 
 const FILES = ['.github/workflows/publish.yml', 'package.json', 'README.md'];
 
