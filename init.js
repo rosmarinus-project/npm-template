@@ -1,5 +1,5 @@
 const { execSync } = require('child_process');
-const { readFileSync, writeFileSync } = require('fs');
+const { readFileSync, writeFileSync, unlinkSync } = require('fs');
 
 const projectRoot = __dirname;
 
@@ -22,6 +22,8 @@ function main() {
 
     writeFileSync(file, newContent);
   }
+
+  unlinkSync(__filename);
 }
 
 main();
