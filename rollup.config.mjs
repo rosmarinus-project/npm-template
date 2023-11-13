@@ -1,14 +1,14 @@
 import common from '@rosmarinus/common-plugins';
+import { defineConfig } from 'rollup';
 
 const external = [];
 
 /**
  * @param {import('rollup').InternalModuleFormat} format
  * @param {string | undefined} banner
- * @returns {import('rollup').RollupOptions}
  */
 function getConfig(format, banner = undefined) {
-  return {
+  return defineConfig({
     input: 'src/index.ts',
     output: {
       file: `dist/${format}/index.js`,
@@ -18,7 +18,7 @@ function getConfig(format, banner = undefined) {
     },
     external,
     plugins: [common()],
-  };
+  });
 }
 
 export default [getConfig('cjs'), getConfig('es')];
