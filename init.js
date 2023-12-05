@@ -18,7 +18,7 @@ const FILES = ['.github/workflows/publish.yml', 'package.json', 'README.md'];
 function main() {
   for (const file of FILES) {
     const content = readFileSync(file, 'utf-8');
-    const newContent = content.replace(KEY, projectName);
+    const newContent = content.replace(new RegExp(KEY, 'g'), projectName);
 
     writeFileSync(file, newContent);
   }
