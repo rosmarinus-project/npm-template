@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, test } from '@jest/globals';
+
 describe('样例', () => {
   beforeEach(() => {});
 
